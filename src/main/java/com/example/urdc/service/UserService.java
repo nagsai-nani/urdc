@@ -13,5 +13,8 @@ UserDao dao;
 	public User save(User user) {
 		return dao.save(user);
 	}
+	public User getByUserName(String userName) {
+		return dao.getByUserName(userName);
+	}
 
 }

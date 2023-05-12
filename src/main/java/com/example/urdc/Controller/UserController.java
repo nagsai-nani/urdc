@@ -2,6 +2,8 @@ package com.example.urdc.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,11 @@ UserService service;
 
 public ResponseEntity<User> saveUser(@RequestBody User user){
 	return ResponseEntity.ok(service.save(user));
+	
+}
+@GetMapping("/get/{userName}")
+public ResponseEntity<User> getByUserName(@PathVariable String userName){
+	return ResponseEntity.ok(service.getByUserName(userName));
 	
 }
 
