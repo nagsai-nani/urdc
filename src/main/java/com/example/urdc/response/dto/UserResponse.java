@@ -1,16 +1,28 @@
-package com.example.urdc.models;
+package com.example.urdc.response.dto;
 
-public class User { 
-	
+import com.example.urdc.models.EmployeeDetails;
+
+public class UserResponse {
 	private String aadharNumber;
     private String userName;
     private String contactNumber;
     private String address;
-    private String password;
     private String salary;
     private String empId;
     private EmployeeDetails details;
     
+   
+	public UserResponse(String aadharNumber) {
+		super();
+		this.aadharNumber = aadharNumber;
+	}
+	
+	
+	public UserResponse() {
+		super(); 
+	}
+
+
 	public String getAadharNumber() {
 		return aadharNumber;
 	}
@@ -35,12 +47,6 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
 	public String getSalary() {
 		return salary;
 	}
@@ -61,4 +67,4 @@ public class User {
 	}
     
     
-    	}
+}
