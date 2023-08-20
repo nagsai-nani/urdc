@@ -1,5 +1,7 @@
 package com.example.urdc.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.urdc.dto.UserDto;
 import com.example.urdc.models.User;
+import com.example.urdc.response.dto.UserResponse;
 import com.example.urdc.service.UserService;
 
 @RestController
@@ -22,7 +25,7 @@ UserService service;
 
 @PostMapping("/save")
 
-public ResponseEntity<User> saveUser(@RequestBody User user){
+public ResponseEntity<User> saveUser(@RequestBody User user) throws Exception{
 	return ResponseEntity.ok(service.save(user));
 	
 }
@@ -38,4 +41,9 @@ public ResponseEntity<String> updateUser(@RequestBody UserDto dto) throws Except
 	
 }
 
+@GetMapping("/get/aadharNumber/{aadharNumber}")
+public ResponseEntity<List<UserResponse>> getUserName(@PathVariable String aadharNumber){
+	return ResponseEntity.ok(service.getByAadharNumber(aadharNumber));
+	
+}
 }

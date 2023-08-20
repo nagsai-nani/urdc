@@ -1,5 +1,7 @@
 package com.example.urdc.response.dto;
 
+import com.example.urdc.models.EmployeeDetails;
+
 public class UserResponse {
 	private String aadharNumber;
     private String userName;
@@ -7,6 +9,20 @@ public class UserResponse {
     private String address;
     private String salary;
     private String empId;
+    private EmployeeDetails details;
+    
+   
+	public UserResponse(String aadharNumber) {
+		super();
+		this.aadharNumber = aadharNumber;
+	}
+	
+	
+	public UserResponse() {
+		super(); 
+	}
+
+
 	public String getAadharNumber() {
 		return aadharNumber;
 	}
@@ -42,6 +58,12 @@ public class UserResponse {
 	}
 	public void setEmpId(String empId) {
 		this.empId = empId;
+	}
+	public EmployeeDetails getDetails() {
+		return details;
+	}
+	public void setDetails(EmployeeDetails details) {
+		this.details = details;
 	}
     
     

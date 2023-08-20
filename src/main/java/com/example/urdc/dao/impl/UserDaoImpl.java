@@ -1,5 +1,7 @@
 package com.example.urdc.dao.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -52,6 +54,13 @@ UserRepository repo;
 		
 		return updateResult.getModifiedCount();
 		
+	}
+
+	@Override
+	public List<User> getByAadharNumber(String aadharNumber) {
+		Query query=new Query();
+		query.addCriteria(Criteria.where("aadharNumber").is(aadharNumber));
+		return temp.find(query, User.class);
 	}
 
 }

@@ -9,6 +9,7 @@ public class User {
     private String password;
     private String salary;
     private String empId;
+    private EmployeeDetails details;
     
 	public String getAadharNumber() {
 		return aadharNumber;
@@ -51,6 +52,12 @@ public class User {
 	}
 	public void setEmpId(String empId) {
 		this.empId = empId;
+	}
+	public EmployeeDetails getDetails() {
+		return details;
+	}
+	public void setDetails(EmployeeDetails details) {
+		this.details = details;
 	}
     
     
